@@ -63,4 +63,10 @@ public class FlightTest {
         flight.bookPassenger(passenger1);
         assertEquals(1, flight.countPassengers());
     }
+
+    @Test
+    public void canCheckIfSeatsAvailable__true() {
+        flight.bookPassenger(passenger1);
+        assertTrue(flight.seatsAvailable());
+    }
 }

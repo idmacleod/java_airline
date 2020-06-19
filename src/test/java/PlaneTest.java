@@ -15,4 +15,14 @@ public class PlaneTest {
     public void hasType() {
         assertEquals(PlaneType.CESSNA172, plane.getType());
     }
+
+    @Test
+    public void canGetCapacity() {
+        assertEquals(4, plane.getCapacity());
+    }
+
+    @Test
+    public void canGetTotalWeight() {
+        assertEquals(60, plane.getTotalWeight());
+    }
 }

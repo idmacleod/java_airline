@@ -41,4 +41,8 @@ public class Flight {
     public String getDepartTime() {
         return departTime;
     }
+
+    public int getAvailableSeats() {
+        return plane.getType().getCapacity() - countPassengers();
+    }
 }

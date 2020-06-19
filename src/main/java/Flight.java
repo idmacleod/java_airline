@@ -46,6 +46,10 @@ public class Flight {
         return plane.getCapacity() - countPassengers();
     }
 
+    public boolean seatsAvailable() {
+        return getAvailableSeats() > 0;
+    }
+
     public void bookPassenger(Passenger passenger) {
         passengers.add(passenger);
     }

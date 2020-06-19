@@ -19,27 +19,27 @@ public class FlightTest {
     }
 
     @Test
-    public void hasPlane {
-        assertEquals(PlaneType.CESSNA172, flight.getPlane());
+    public void hasPlane() {
+        assertEquals(plane, flight.getPlane());
     }
 
     @Test
-    public void hasNumber {
+    public void hasNumber() {
         assertEquals("IM777", flight.getNumber());
     }
 
     @Test
-    public void hasDestination {
+    public void hasDestination() {
         assertEquals("VCE", flight.getDestination());
     }
 
     @Test
-    public void hasDepartAirport {
+    public void hasDepartAirport() {
         assertEquals("EDI", flight.getDepartAirport());
     }
 
     @Test
-    public void hasDepartTime {
+    public void hasDepartTime() {
         assertEquals("06:15", flight.getDepartTime());
     }
 }

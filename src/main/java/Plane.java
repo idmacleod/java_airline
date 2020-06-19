@@ -8,4 +8,12 @@ public class Plane {
     public PlaneType getType() {
         return type;
     }
+
+    public int getCapacity() {
+        return type.getCapacity();
+    }
+
+    public int getTotalWeight() {
+        return type.getTotalWeight();
+    }
 }

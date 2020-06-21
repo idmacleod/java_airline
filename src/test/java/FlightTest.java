@@ -120,4 +120,12 @@ public class FlightTest {
         int seat = passenger1.getSeat();
         assertFalse(flight.seatIsAvailable(seat));
     }
+
+    @Test
+    public void bookingPassengerAssignsRandomSeat() {
+        flight.bookPassenger(passenger1);
+        int seat = passenger1.getSeat();
+        assertNotEquals(0, seat);
+        assertFalse(flight.seatIsAvailable(seat));
+    }
 }

@@ -1,5 +1,6 @@
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -66,11 +67,16 @@ public class Flight {
     }
 
     public int countAvailableSeats() {
-        System.out.println(availableSeats);
         return availableSeats.size();
     }
 
     public boolean seatIsAvailable(int seat) {
         return availableSeats.contains(seat);
+    }
+
+    public void assignRandomSeat(Passenger passenger) {
+        Collections.shuffle(availableSeats);
+        int seat = availableSeats.remove(0);
+        passenger.setSeat(seat);
     }
 }

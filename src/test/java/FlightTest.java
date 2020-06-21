@@ -127,8 +127,8 @@ public class FlightTest {
     @Test
     public void canPrintSeating() {
         flight.bookPassenger(passenger1);
-        String expected = "Iain in seat " + passenger1.getSeat() + ", ";
+        String expected = passenger1.getSeat() + " ";
         System.out.println(expected);
-        assertEquals(expected, flight.printSeating());
+        assertEquals(expected, flight.printSeatNumbers());
     }
 }

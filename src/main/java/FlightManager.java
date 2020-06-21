@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class FlightManager {
     public static double getBaggageAllowance(Flight flight) {
@@ -16,5 +17,9 @@ public class FlightManager {
     public static double getBaggageRemaining(Flight flight) {
         Plane plane = flight.getPlane();
         return (plane.getTotalWeight() / 2) - getBaggageUsed(flight);
+    }
+
+    public static void sortPassengersBySeatNumber(Flight flight) {
+        flight.getPassengers().sort(Comparator.comparing(Passenger::getSeat));
     }
 }

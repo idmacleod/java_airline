@@ -13,6 +13,8 @@ public class FlightManagerTest {
     private LocalDateTime departTime;
     private Passenger passenger1;
     private Passenger passenger2;
+    private Passenger passenger3;
+    private Passenger passenger4;
 
     @Before
     public void before() {
@@ -21,8 +23,12 @@ public class FlightManagerTest {
         flight = new Flight(plane, "IM777", "VCE", "EDI", departTime);
         passenger1 = new Passenger("Iain", 1);
         passenger2 = new Passenger("Gary", 2);
+        passenger3 = new Passenger("Evlyn", 2);
+        passenger4 = new Passenger("Donald", 2);
         flight.bookPassenger(passenger1);
         flight.bookPassenger(passenger2);
+        flight.bookPassenger(passenger3);
+        flight.bookPassenger(passenger4);
     }
 
     @Test
@@ -32,18 +38,17 @@ public class FlightManagerTest {
 
     @Test
     public void canGetBaggageUsed() {
-        assertEquals(45.00, FlightManager.getBaggageUsed(flight), 0.01);
+        assertEquals(105.00, FlightManager.getBaggageUsed(flight), 0.01);
     }
 
     @Test
     public void canGetBaggageRemaining() {
-        assertEquals(85.00, FlightManager.getBaggageRemaining(flight), 0.01);
+        assertEquals(25.00, FlightManager.getBaggageRemaining(flight), 0.01);
     }
 
     @Test
-    public void canSortBySeatNumber() {
-        System.out.println(flight.getPassengers());
-        flight.getPassengers().sort(Comparator.comparing(Passenger::getSeat));
-        System.out.println(flight.getPassengers());
+    public void canSortPassengersBySeatNumber() {
+        FlightManager.sortPassengersBySeatNumber(flight);
+        assertEquals("1 2 3 4 ", flight.printSeatNumbers());
     }
 }

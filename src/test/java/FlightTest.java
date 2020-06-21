@@ -123,4 +123,12 @@ public class FlightTest {
         assertNotEquals(0, seat);
         assertFalse(flight.seatIsAvailable(seat));
     }
+
+    @Test
+    public void canPrintSeating() {
+        flight.bookPassenger(passenger1);
+        String expected = "Iain in seat " + passenger1.getSeat() + ", ";
+        System.out.println(expected);
+        assertEquals(expected, flight.printSeating());
+    }
 }

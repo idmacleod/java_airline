@@ -3,6 +3,7 @@ import org.junit.Test;
 
 import java.time.LocalDateTime;
 import java.time.Month;
+import java.util.Comparator;
 
 import static org.junit.Assert.assertEquals;
 
@@ -37,5 +38,12 @@ public class FlightManagerTest {
     @Test
     public void canGetBaggageRemaining() {
         assertEquals(85.00, FlightManager.getBaggageRemaining(flight), 0.01);
+    }
+
+    @Test
+    public void canSortBySeatNumber() {
+        System.out.println(flight.getPassengers());
+        flight.getPassengers().sort(Comparator.comparing(Passenger::getSeat));
+        System.out.println(flight.getPassengers());
     }
 }

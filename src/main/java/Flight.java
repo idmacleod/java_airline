@@ -76,4 +76,13 @@ public class Flight {
         int seat = availableSeats.remove(0);
         passenger.setSeat(seat);
     }
+
+    public String printSeating() {
+        String result = "";
+        for (Passenger passenger : passengers) {
+            String substring = passenger.getName() + " in seat " + passenger.getSeat() + ", ";
+            result += substring;
+        }
+        return result;
+    }
 }

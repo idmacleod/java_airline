@@ -96,4 +96,9 @@ public class FlightTest {
         assertEquals(1, flight.countPassengers());
         assertNull(passenger6.getFlight());
     }
+
+    @Test
+    public void allSeatsStartAvailable() {
+        assertEquals(3, flight.countAvailableSeats());
+    }
 }

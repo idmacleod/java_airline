@@ -53,16 +53,13 @@ public class Flight {
         return departTime;
     }
 
-    public int getAvailableSeats() {
-        return plane.getCapacity() - countPassengers();
-    }
-
     public void bookPassenger(Passenger passenger) {
         // Assuming bags weigh 15kg
         double baggage = passenger.getBags() * 15.0;
-        if (getAvailableSeats() > 0 && baggage <= FlightManager.getBaggageAllowance(this)) {
+        if (countAvailableSeats() > 0 && baggage <= FlightManager.getBaggageAllowance(this)) {
             passengers.add(passenger);
             passenger.setFlight(this);
+            assignRandomSeat(passenger);
         }
     }
 

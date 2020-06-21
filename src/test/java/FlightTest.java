@@ -103,14 +103,14 @@ public class FlightTest {
     }
 
     @Test
-    public void canCheckIfSeatAvailable__true() {
-        assertTrue(flight.checkSeatAvailable(1));
+    public void canCheckIfSeatIsAvailable__true() {
+        assertTrue(flight.seatIsAvailable(1));
     }
 
     @Test
-    public void canCheckIfSeatAvailable__false() {
+    public void canCheckIfSeatIsAvailable__false() {
         flight.bookPassenger(passenger1);
         int seat = passenger1.getSeat();
-        assertFalse(flight.checkSeatAvailable(seat));
+        assertFalse(flight.seatIsAvailable(seat));
     }
 }

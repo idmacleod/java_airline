@@ -1,11 +1,15 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.time.LocalDateTime;
+import java.time.Month;
+
 import static org.junit.Assert.*;
 
 public class FlightTest {
     private Flight flight;
     private Plane plane;
+    private LocalDateTime departTime;
     private Passenger passenger1;
     private Passenger passenger2;
     private Passenger passenger3;
@@ -16,7 +20,8 @@ public class FlightTest {
     @Before
     public void before() {
         plane = new Plane(PlaneType.CESSNA172);
-        flight = new Flight(plane, "IM777", "VCE", "EDI", "06:15");
+        departTime = LocalDateTime.of(2021, Month.MAY, 24, 06, 15);
+        flight = new Flight(plane, "IM777", "VCE", "EDI", departTime);
         passenger1 = new Passenger("Iain", 1);
         passenger2 = new Passenger("Gary", 0);
         passenger3 = new Passenger("Evlyn", 2);
@@ -52,7 +57,7 @@ public class FlightTest {
 
     @Test
     public void hasDepartTime() {
-        assertEquals("06:15", flight.getDepartTime());
+        assertEquals(departTime, flight.getDepartTime());
     }
 
     @Test

@@ -4,7 +4,6 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class FlightManagerTest {
-    private FlightManager flightManager;
     private Flight flight;
     private Plane plane;
     private Passenger passenger1;
@@ -18,16 +17,10 @@ public class FlightManagerTest {
         passenger2 = new Passenger("Gary", 2);
         flight.bookPassenger(passenger1);
         flight.bookPassenger(passenger2);
-        flightManager = new FlightManager(flight);
-    }
-
-    @Test
-    public void hasFlight() {
-        assertEquals(flight, flightManager.getFlight());
     }
 
     @Test
     public void canGetBaggageAllowance() {
-        assertEquals(16.25, flightManager.getBaggageAllowance(), 0.01);
+        assertEquals(32.5, FlightManager.getBaggageAllowance(flight), 0.01);
     }
 }

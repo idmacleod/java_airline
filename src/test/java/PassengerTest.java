@@ -24,6 +24,6 @@ public class PassengerTest {
     @Test
     public void canGetBaggageWeight() {
         // Assume all bags weigh 15kg
-        assertEquals(30.00, passenger.getBaggageWeight());
+        assertEquals(30.00, passenger.getBaggageWeight(), .01);
     }
 }

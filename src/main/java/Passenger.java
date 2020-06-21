@@ -14,4 +14,9 @@ public class Passenger {
     public int getBags() {
         return bags;
     }
+
+    public double getBaggageWeight() {
+        // Assume all bags weight 15kg
+        return 15.00 * bags;
+    }
 }

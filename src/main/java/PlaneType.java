@@ -1,7 +1,7 @@
 public enum PlaneType {
-    BOEING747(400, 20000.00),
-    AIRBUS220(120, 5000.00),
-    CESSNA172(4, 130.00);
+    BOEING747(400, 40000.00),
+    AIRBUS220(120, 10000.00),
+    CESSNA172(4, 260.00);
 
     private int capacity;
     private double totalWeight;

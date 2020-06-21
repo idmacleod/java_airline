@@ -28,4 +28,9 @@ public class FlightManagerTest {
     public void canGetBaggageUsed() {
         assertEquals(45.00, FlightManager.getBaggageUsed(flight), 0.01);
     }
+
+    @Test
+    public void canGetBaggageRemaining() {
+        assertEquals(85.00, FlightManager.getBaggageRemaining(flight), 0.01);
+    }
 }

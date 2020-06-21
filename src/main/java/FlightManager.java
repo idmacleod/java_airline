@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Comparator;
 
 public class FlightManager {
@@ -20,6 +19,7 @@ public class FlightManager {
     }
 
     public static void sortPassengersBySeatNumber(Flight flight) {
+        // Placeholder using Java's own sort method:
         flight.getPassengers().sort(Comparator.comparing(Passenger::getSeat));
     }
 }

@@ -40,8 +40,8 @@ public class PassengerTest {
     }
 
     @Test
-    public void seatStartsNull() {
-        assertNull(passenger.getSeat());
+    public void seatStartsZero() {
+        assertEquals(0, passenger.getSeat());
     }
 
     @Test

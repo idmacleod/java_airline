@@ -1,5 +1,8 @@
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Flight {
     private ArrayList<Passenger> passengers;
@@ -8,6 +11,7 @@ public class Flight {
     private String destination;
     private String departAirport;
     private LocalDateTime departTime;
+    private Set<Integer> availableSeats;
 
     public Flight(Plane plane, String number, String destination,
                   String departAirport, LocalDateTime departTime) {
@@ -17,6 +21,7 @@ public class Flight {
         this.destination = destination;
         this.departAirport = departAirport;
         this.departTime = departTime;
+        this.availableSeats = IntStream.rangeClosed(1, plane.getCapacity()).boxed().collect(Collectors.toSet());
     }
 
     public ArrayList<Passenger> getPassengers() {
@@ -58,5 +63,10 @@ public class Flight {
             passengers.add(passenger);
             passenger.setFlight(this);
         }
+    }
+
+    public int countAvailableSeats() {
+        System.out.println(availableSeats);
+        return availableSeats.size();
     }
 }

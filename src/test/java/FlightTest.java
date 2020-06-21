@@ -113,4 +113,11 @@ public class FlightTest {
         int seat = passenger1.getSeat();
         assertFalse(flight.seatIsAvailable(seat));
     }
+
+    @Test
+    public void canAssignRandomSeat() {
+        flight.assignRandomSeat(passenger1);
+        int seat = passenger1.getSeat();
+        assertFalse(flight.seatIsAvailable(seat));
+    }
 }

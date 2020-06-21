@@ -1,5 +1,15 @@
 public class FlightManager {
-    public static double baggageAllowance(Flight flight) {
+    private Flight flight;
+
+    public FlightManager(Flight flight) {
+        this.flight = flight;
+    }
+
+    public Flight getFlight() {
+        return flight;
+    }
+
+    public double getBaggageAllowance() {
         Plane plane = flight.getPlane();
         return plane.getTotalWeight() / 2 / plane.getCapacity();
     }

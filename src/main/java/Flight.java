@@ -18,6 +18,10 @@ public class Flight {
         this.departTime = departTime;
     }
 
+    public ArrayList<Passenger> getPassengers() {
+        return passengers;
+    }
+
     public int countPassengers() {
         return passengers.size();
     }

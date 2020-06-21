@@ -4,7 +4,7 @@ public class FlightManager {
         return plane.getTotalWeight() / 2 / plane.getCapacity();
     }
 
-    public static double getBaggageUsed(Flight flight) {
-
-    }
+//    public static double getBaggageUsed(Flight flight) {
+//
+//    }
 }

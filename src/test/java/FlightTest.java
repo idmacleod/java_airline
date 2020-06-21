@@ -11,6 +11,7 @@ public class FlightTest {
     private Passenger passenger3;
     private Passenger passenger4;
     private Passenger passenger5;
+    private Passenger passenger6;
 
     @Before
     public void before() {
@@ -19,8 +20,9 @@ public class FlightTest {
         passenger1 = new Passenger("Iain", 1);
         passenger2 = new Passenger("Gary", 0);
         passenger3 = new Passenger("Evlyn", 2);
-        passenger4 = new Passenger("Donald", 4);
-        passenger5 = new Passenger("Paddington", 5);
+        passenger4 = new Passenger("Donald", 2);
+        passenger5 = new Passenger("Paddington", 1);
+        passenger6 = new Passenger("Baloo", 5);
     }
 
     @Test
@@ -78,5 +80,12 @@ public class FlightTest {
     public void canGetPassengers() {
         flight.bookPassenger(passenger1);
         assertEquals(passenger1, flight.getPassengers().get(0));
+    }
+
+    @Test
+    public void cannotBookPassengerIfBaggageExceedsAllowance() {
+        flight.bookPassenger(passenger1);
+        flight.bookPassenger(passenger6);
+        assertEquals(1, flight.countPassengers());
     }
 }

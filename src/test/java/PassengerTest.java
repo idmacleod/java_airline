@@ -38,4 +38,15 @@ public class PassengerTest {
         passenger.setFlight(flight);
         assertEquals(flight, passenger.getFlight());
     }
+
+    @Test
+    public void seatStartsNull() {
+        assertNull(passenger.getSeat());
+    }
+
+    @Test
+    public void canSetSeat() {
+        passenger.setSeat(1);
+        assertEquals(1, passenger.getSeat());
+    }
 }

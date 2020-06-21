@@ -69,6 +69,7 @@ public class FlightTest {
     public void canBookPassenger() {
         flight.bookPassenger(passenger1);
         assertEquals(1, flight.countPassengers());
+        assertEquals(flight, passenger1.getFlight());
     }
 
     @Test
@@ -79,6 +80,7 @@ public class FlightTest {
         flight.bookPassenger(passenger4);
         flight.bookPassenger(passenger5);
         assertEquals(4, flight.countPassengers());
+        assertNull(passenger5.getFlight());
     }
 
     @Test
@@ -92,5 +94,6 @@ public class FlightTest {
         flight.bookPassenger(passenger1);
         flight.bookPassenger(passenger6);
         assertEquals(1, flight.countPassengers());
+        assertNull(passenger6.getFlight());
     }
 }

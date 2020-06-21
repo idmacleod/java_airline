@@ -12,4 +12,9 @@ public class FlightManager {
                 .stream()
                 .reduce(0.0, (subtotal, passenger) -> subtotal + (passenger.getBags() * 15), Double::sum);
     }
+
+    public static double getBaggageRemaining(Flight flight) {
+        Plane plane = flight.getPlane();
+        return (plane.getTotalWeight() / 2) - getBaggageUsed(flight);
+    }
 }

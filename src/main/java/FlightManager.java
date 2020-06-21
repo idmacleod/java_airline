@@ -7,12 +7,9 @@ public class FlightManager {
     }
 
     public static double getBaggageUsed(Flight flight) {
-        ArrayList<Passenger> passengers = flight.getPassengers();
-        double total = 0.00;
-        for (Passenger passenger : passengers) {
-            // Assuming each bag weighs 15kg
-            total += (passenger.getBags() * 15.00);
-        }
-        return total;
+        // Assuming each bag weighs 15kg
+        return flight.getPassengers()
+                .stream()
+                .reduce(0.0, (subtotal, passenger) -> subtotal + (passenger.getBags() * 15), Double::sum);
     }
 }

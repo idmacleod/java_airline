@@ -78,11 +78,11 @@ public class Flight {
     }
 
     public String printSeating() {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (Passenger passenger : passengers) {
             String substring = passenger.getName() + " in seat " + passenger.getSeat() + ", ";
-            result += substring;
+            result.append(substring);
         }
-        return result;
+        return result.toString();
     }
 }

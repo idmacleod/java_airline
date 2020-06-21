@@ -51,7 +51,9 @@ public class Flight {
     }
 
     public void bookPassenger(Passenger passenger) {
-        if (getAvailableSeats() > 0) {
+        // Assuming bags weigh 15kg
+        double baggage = passenger.getBags() * 15.0;
+        if (getAvailableSeats() > 0 && baggage <= FlightManager.getBaggageAllowance(this)) {
             passengers.add(passenger);
         }
     }

@@ -56,6 +56,7 @@ public class Flight {
         double baggage = passenger.getBags() * 15.0;
         if (getAvailableSeats() > 0 && baggage <= FlightManager.getBaggageAllowance(this)) {
             passengers.add(passenger);
+            passenger.setFlight(this);
         }
     }
 }

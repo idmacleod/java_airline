@@ -28,6 +28,6 @@ public class FlightManagerTest {
 
     @Test
     public void canGetBaggageAllowance() {
-        assertEquals(12.5, flightManager.getBaggageAllowance(), 0.1);
+        assertEquals(16.25, flightManager.getBaggageAllowance(), 0.01);
     }
 }

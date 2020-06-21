@@ -1,6 +1,9 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.time.LocalDateTime;
+import java.time.Month;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
@@ -25,5 +28,14 @@ public class PassengerTest {
     @Test
     public void flightStartsNull() {
         assertNull(passenger.getFlight());
+    }
+
+    @Test
+    public void canSetFlight() {
+        Plane plane = new Plane(PlaneType.CESSNA172);
+        LocalDateTime departTime = LocalDateTime.of(2021, Month.MAY, 24, 06, 15);
+        Flight flight = new Flight(plane, "IM777", "VCE", "EDI", departTime);
+        passenger.setFlight(flight);
+        assertEquals(flight, passenger.getFlight());
     }
 }
